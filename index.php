@@ -49,4 +49,5 @@ $conn->close();
 		<input type="text" name="first_name">
 		<button type="submit">Create user</button>
 	</form>
+	<div></div>
 </html>
