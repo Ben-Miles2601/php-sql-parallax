@@ -16,13 +16,6 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 
 
 
-/*if ($result->num_rows > 0) {
-	while ($row = $result->fetch_assoc()) {
-
-	}
-} else {
-	echo "0 results";
-}*/
 
 if(isset($_POST['first_name'])) {
 
@@ -40,9 +33,15 @@ if(isset($_POST['first_name'])) {
 	
 }
 
-//if (isset($_POST['btnSubmit'])) {
-//	SELECT * FROM friends;	
-//}
+
+// Check if the form is submitted 
+if ( isset($_POST['first_name'] ) ) { 
+// retrieve the form data by using the element's name attributes value as key 
+$firstname = $_POST['first_name']; $lastname = $_POST['surname']; 
+// display the results 
+echo '<h3>Form GET Method</h3>'; select * from friends;
+} 
+
 
 $conn->close();
 ?>
@@ -68,15 +67,17 @@ $conn->close();
 		<input type="text" name="email_address">
 		<h3>Telephone</h3>
 		<input type="text" name="telephone">
-		<button type="submit">Create user</button>
+		<button type="submit" id='submit'>Create user</button>
+
+	
+
 	</form>
 
-	<h3>List Users?</h3>
-	<input type="submit" id="btnSubmit" value="Retrieve Data" />
- 
+	 	 <a href='filename.php'> Retrieve Data? </a>
 
 
 		
 	
 	<div></div>
 </html>
+
